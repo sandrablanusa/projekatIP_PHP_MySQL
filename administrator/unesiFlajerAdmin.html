@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="unesiFlajerAdmin.css" />
+</head>
+
+<body>
+    <div class="okvir">
+        <?php include('../zaglavlje.php') ?>
+        <?php include('../navigacijaAdministrator.php') ?>
+
+        <!-- unos flajera-->
+        <div class=" klasaUnesiFlajere">
+            <div class="container">
+                <div class="title">Unos flajera</div>
+                <div class="content">
+                    <form action="#">
+                        <div class="user-details">
+                            <div class="input-box">
+                                <span class="details">Naziv flajera</span>
+                                <input type="text" required placeholder="Unesite naziv flajera" oninvalid="this.setCustomValidity('Morate uneti naziv flajera')" oninput="setCustomValidity('')">
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Broj flajera</span>
+                                <input type="text" required placeholder="Unesite broj flajera" oninvalid="this.setCustomValidity('Morate uneti broj flajera')" oninput="setCustomValidity('')">
+                            </div>
+                        </div>
+                        <div class="privatnost">
+                            <input type="radio" name="privat" id="dot-1">
+                            <input type="radio" name="privat" id="dot-2">
+                            <span class="privat-title">Privatnost flajera</span>
+                            <div class="category">
+                                <label for="dot-1">
+                                    <span class="dot one"></span>
+                                    <span class="privat">Javni flajer</span>
+                                </label>
+                                <label for="dot-2">
+                                    <span class="dot two"></span>
+                                    <span class="privat">Tajni flajer</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="dodavanjePDF">
+                            <!-- actual upload which is hidden -->
+                            <input type="file" id="actual-btn" hidden />
+
+                            <!-- our custom upload button -->
+                            <label for="actual-btn">Dodaj PDF flajera</label>
+
+                            <!-- name of file chosen -->
+                            <span id="file-chosen">Nije izabran PDF </span>
+                        </div>
+
+                        <div class="dodavanjeHTML">
+                            <!-- actual upload which is hidden -->
+                            <input type="file" id="actual-btn" hidden />
+
+                            <!-- our custom upload button -->
+                            <label for="actual-btn">Dodaj HTML flajera</label>
+
+                            <!-- name of file chosen -->
+                            <span id="file-chosen">Nije izabran HTML </span>
+                        </div>
+                        <div class="button">
+                            <input type="submit" value="Sačuvaj">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php include('../futer.php') ?>
+</body>
+
+</html>

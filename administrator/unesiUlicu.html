@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="unesiUlicu.css" />
+</head>
+
+<body>
+    <div class="okvir">
+        <?php include('../zaglavlje.php') ?>
+        <?php include('../navigacijaAdministrator.php') ?>
+        
+        <div class="unosUlice">
+            <div class="container">
+                <div class="title">Unos ulice</div>
+                <div class="content">
+                    <form action="#">
+                        <div class="user-details">
+                            <div class="input-box">
+                                <span class="details">Naziv ulice</span>
+                                <input type="text" required placeholder="Unesite naziv ulice" oninvalid="this.setCustomValidity('Morate uneti naziv ulice')" oninput="setCustomValidity('')">
+                            </div>
+                        </div>
+                        <div class="button">
+                            <input type="submit" value="Unesi">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php include('../futer.php') ?>
+</body>
+
+</html>

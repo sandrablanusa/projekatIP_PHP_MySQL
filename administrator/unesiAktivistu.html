@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="unesiAktivistu.css" />
+</head>
+
+<body>
+	<div class="okvir">
+		<?php include('../zaglavlje.php') ?>
+		<?php include('../navigacijaAdministrator.php') ?>
+
+		<div class="dodavanjeAktiviste">
+			<div class="container">
+				<div class="title">Unos novog aktiviste</div>
+				<div class="content">
+					<form action="../Flajerisanje/ubaciUTabeluAktivistiAdministrator.php" method="post">
+						<div class="user-details">
+							<div class="input-box">
+								<span class="details">Ime</span>
+								<input type="text" name="ime" required placeholder="Unesite svoje ime" oninvalid="this.setCustomValidity('Morate uneti ime')" oninput="setCustomValidity('')">
+							</div>
+							<div class="input-box">
+								<span class="details">Prezime</span>
+								<input type="text" name="prezime" required placeholder="Unesite svoje prezime" oninvalid="this.setCustomValidity('Morate uneti prezime')" oninput="setCustomValidity('')">
+							</div>
+							<div class="input-box">
+								<span class="details">Adresa</span>
+								<input type="text" name="adresa" required placeholder="Unesite svoju adresu" oninvalid="this.setCustomValidity('Morate uneti adresu')" oninput="setCustomValidity('')">
+							</div>
+							<div class="input-box">
+								<span class="details">Broj telefona</span>
+								<input type="text" name="telefon" required placeholder="Unesite svoj broj telefona" oninvalid="this.setCustomValidity('Morate uneti broj telefona')" oninput="setCustomValidity('')">
+							</div>
+							<div class="input-box">
+								<span class="details">Email</span>
+								<input type="text" name="email" required placeholder="Unesite svoj email" oninvalid="this.setCustomValidity('Morate uneti email')" oninput="setCustomValidity('')">
+							</div>
+							<div class="input-box">
+								<span class="details">Šifra</span>
+								<input type="password" name="sifra" required placeholder="Unesite svoju šifru" oninvalid="this.setCustomValidity('Morate uneti šifru')" oninput="setCustomValidity('')">
+							</div>
+						</div>
+						<div class="button">
+							<input type="submit" name="unesi" value="Unesi aktivistu">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php include('../futer.php') ?>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	box-sizing: border-box;
+}
+
+body {
+	box-sizing: inherit;
+	position: relative;
+	margin: 0;
+	padding-bottom: 3rem;
+	min-height: 100%;
+	background-color: #e6e6e6;
+}
+
+.okvir {
+	margin: 0 auto;
+	width: 90%;
+}
+
+.a {
+	box-sizing: inherit;
+	font-family: Ariel;
+	font-style: italic;
+	color: #2b2b2b;
+	text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1), 7px 7px 0px rgba(0, 0, 0, 0.05);
+	padding: 14px;
+	font-size: 14px;
+	overflow: hidden;
+	text-align: center;
+	background-color: white;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 12%;
+	float: none;
+}
+
+.b {
+	box-sizing: inherit;
+	overflow: hidden;
+	background-color: #333;
+	font-family: Arial;
+}
+
+
+.b a {
+	float: left;
+	font-size: 14px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.b a:hover {
+    background-color: red;
+}
+/*--------------------------------------------------- futer -----------------------------------------*/
+.futer {
+	position: absolute;
+	box-sizing: inherit;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	background-color: #f2f2f2;
+	text-align: center;
+	font-family: Arial;
+}
+
+/*--------------------------------------------- Registracija --------------------------------------*/
+.registracija {
+
+	height: 60%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	padding: 10px;
+	background-color: #dddfd4;
+}
+
+.container {
+	max-width: 700px;
+	width: 100%;
+	background-color: #fff;
+	padding: 25px 30px;
+	border-radius: 5px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.container .title {
+	font-size: 25px;
+	font-weight: 500;
+	position: relative;
+}
+
+.container .title::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 3px;
+	width: 30px;
+	border-radius: 5px;
+	background: #333;
+}
+
+.content form .user-details {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+	margin-bottom: 15px;
+	width: calc(100% / 2 - 20px);
+}
+
+form .input-box span.details {
+	display: block;
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+	height: 45px;
+	width: 100%;
+	outline: none;
+	font-size: 16px;
+	border-radius: 5px;
+	padding-left: 15px;
+	border: 1px solid #ccc;
+	border-bottom-width: 2px;
+	transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+	border-color: #333;
+}
+
+form .button {
+	height: 45px;
+	margin: 35px 0
+}
+
+form .button input {
+	height: 100%;
+	width: 100%;
+	border-radius: 5px;
+	border: none;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	background: #333;
+}
+
+form .button input:hover {
+	/* transform: scale(0.99); */
+	background: red;
+}
+
+form .button input:focus {
+	opacity: 0.9;
+	outline: 0;
+}
+
+form .button input:active {
+	box-shadow: none;
+	margin-top: 6px;
+}
+
+/*-------------------------------------------------------media upit ------------------------------*/
+@media all and (max-width : 768px) {
+
+	.okvir {
+		float: none;
+		width: 100%;
+		height: auto;
+	}
+
+	.b a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+    
+    .container {
+		max-width: 100%;
+	}
+
+	form .user-details .input-box {
+		margin-bottom: 15px;
+		width: 94%;
+	}
+
+	form .category {
+		width: 100%;
+	}
+
+	.content form .user-details {
+		max-height: 300px;
+		overflow-y: scroll;
+	}
+
+	.user-details::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	.container .content .category {
+		flex-direction: column;
+	}
+}

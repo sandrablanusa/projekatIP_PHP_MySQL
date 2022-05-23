@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="pocetnaNavigacijaUlogujSe.css" />
+</head>
+
+<body>
+    <div class="okvir">
+        <?php include('zajednickaPocetnaNavigacija.php') ?>
+        <div class="bojaSadrzaja">
+            <div class="container">
+                <!--Levi prozora-->
+                <div class="box-1">
+                    <div class="content-holder">
+                        <h2>Zdravo!</h2>
+                        <p>Ukoliko nemate nalog, možete brzo da se registujete u par koraka. </p>
+                        <a href="pocetnaNavigacijaRegistrujSe.html">
+                            <button class="button-1">Registruj se</button>
+                        </a>
+                    </div>
+                </div>
+                <!--Desni prozor-->
+                <div class="box-2">
+                    <form action="ulogujSe.php" method="post">
+                        <div class="login-form-container">
+                            <h1>Prijava</h1>
+                            <input type="text" name="email" placeholder="Unesite email" class="input-field">
+                            <br><br>
+                            <input type="password" name="sifra" placeholder="Unesite šifru" class="input-field">
+                            <br><br>
+                            <button class="login-button" name="prijava">Prijavi se</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php include('../futer.php') ?>
+</body>
+
+</html>

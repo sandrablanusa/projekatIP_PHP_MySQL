@@ -1,0 +1,230 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	box-sizing: border-box;
+}
+
+body {
+	box-sizing: inherit;
+	position: relative;
+	margin: 0;
+	padding-bottom: 3rem;
+	min-height: 100%;
+	background-color: #e6e6e6;
+}
+
+.okvir {
+	margin: 0 auto;
+	width: 90%;
+}
+
+.a {
+	box-sizing: inherit;
+	font-family: Ariel;
+	font-style: italic;
+	color: #2b2b2b;
+	text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1), 7px 7px 0px rgba(0, 0, 0, 0.05);
+	padding: 14px;
+	font-size: 14px;
+	overflow: hidden;
+	text-align: center;
+	background-color: white;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 12%;
+	float: none;
+}
+
+.b {
+	box-sizing: inherit;
+	overflow: hidden;
+	background-color: #333;
+	font-family: Arial;
+}
+
+
+.b a {
+	float: left;
+	font-size: 14px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.b a:hover {
+    background-color: red;
+}
+
+/*--------------------------------------------------- futer -----------------------------------------*/
+.futer {
+	position: absolute;
+	box-sizing: inherit;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	background-color: #f2f2f2;
+	text-align: center;
+	font-family: Arial;
+}
+
+/*-----------------------------------------------Logovanje -----------------------------------------*/
+.bojaSadrzaja {
+	height: 60%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	background-color: #dddfd4;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	background-color: #333;
+	width: 800px;
+	height: 400px;
+	margin: 3% auto;
+	border-radius: 5px;
+}
+
+.content-holder {
+	text-align: center;
+	color: white;
+	font-size: 14px;
+	font-weight: lighter;
+	letter-spacing: 2px;
+	margin-top: 15%;
+	padding: 50px;
+}
+
+.content-holder h2 {
+	font-size: 34px;
+	margin: 20px auto;
+	font-family: 'Poppins', sans-serif;
+}
+
+.content-holder p {
+	margin: 30px auto;
+	font-family: 'Poppins', sans-serif;
+}
+
+.button-1 {
+	box-sizing: border-box;
+	border: none;
+	font-size: 15px;
+	padding: 10px;
+	border-radius: 6px;
+	background-color: white;
+	width: 150px;
+	outline: none;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.button-1:hover {
+	background: red;
+}
+
+.button-1:focus {
+	opacity: 0.9;
+	outline: 0;
+}
+
+.button-1:active {
+	box-shadow: none;
+	margin-top: 6px;
+}
+
+
+.box-2 {
+	background-color: white;
+	margin: 5px;
+	border-radius: 5px;
+	border: left;
+	box-sizing: border-box;
+	margin-bottom: 5px;
+}
+
+.login-form-container {
+	text-align: center;
+	margin-top: 10%;
+
+}
+
+.login-form-container h1 {
+	color: black;
+	font-size: 24px;
+	padding: 20px;
+	font-family: 'Poppins', sans-serif;
+}
+
+.input-field {
+	box-sizing: border-box;
+	font-size: 14px;
+	padding: 10px;
+	border-radius: 7px;
+	border: 1px solid rgb(168, 168, 168);
+	width: 250px;
+	outline: none;
+}
+
+.login-button {
+	box-sizing: border-box;
+	color: white;
+	font-size: 14px;
+	padding: 13px;
+	border-radius: 7px;
+	border: none;
+	width: 250px;
+	outline: none;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	background: #333;
+
+}
+
+.login-button:hover {
+	background: red;
+}
+
+.login-button:focus {
+	opacity: 0.9;
+	outline: 0;
+}
+
+.login-button:active {
+	box-shadow: none;
+	margin-top: 6px;
+}
+
+/*-------------------------------------------------------media upit ------------------------------*/
+@media all and (max-width : 768px) {
+
+	.okvir {
+		float: none;
+		width: 100%;
+		height: auto;
+	}
+
+	.b a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+
+    .container {
+		float: none;
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+}

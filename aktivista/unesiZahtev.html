@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="unesiZahtev.css" />
+</head>
+
+<body>
+    <div class="okvir">
+        <?php include('../zaglavlje.php') ?>
+        <?php include('../navigacijaAktivista.php') ?>
+
+        <!--opotreban ostatak koda-->
+        <div class="osnova">
+            <div class="container">
+                <div class="title">Zahtevi</div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="flajeri">Flajeri</label>
+                    </div>
+                    <div class="col-75">
+                        <select id="flajeri" name="flajeri">
+                            <option selected disabled>--Izaberite iz liste--</option>
+                            <option value="flajeri">Flajer 1</option>
+                            <option value="flajeri">Flajer 2 </option>
+                            <option value="flajeri">Flajer 3</option>
+                            <option value="flajeri">Flajer 4</option>
+                            <option value="flajeri">Flajer 5</option>
+                            <option value="flajeri">Flajer 6</option>
+                            <option value="flajeri">Flajer 7</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="brojFlajera">Broj flajera</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="brojFlajera" placeholder="Unesi broj flajera">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="adresa">Ulica</label>
+                    </div>
+                    <div class="col-75">
+                        <select id="adresa" name="adresa">
+                            <option selected disabled>--Izaberite iz liste--</option>
+                            <option value="adresa">Molerova</option>
+                            <option value="adresa">Narodni front</option>
+                            <option value="adresa">Balkanska</option>
+                            <option value="adresa">Admirala Geprata</option>
+                            <option value="adresa">Narodni front</option>
+                            <option value="adresa">Višnjička</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="poljeBrojevi">Adrese: brojevi</label>
+                    </div>
+                    <div class="col-76">
+                        <select multiple>
+                            <option selected disabled>-CTRL za više adresa--</option>
+                            <option>24</option>
+                            <option>88</option>
+                            <option>22</option>
+                            <option>71</option>
+                            <option>73</option>
+                            <option>76</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Unesi">
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php include('../futer.php') ?>
+</body>
+
+</html>
