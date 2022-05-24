@@ -9,6 +9,5 @@
     EOT;
     mysqli_select_db($veza,'Flajerisanje');
     mysqli_query($veza,$sql);
-    
     mysqli_close($veza);
 ?>
