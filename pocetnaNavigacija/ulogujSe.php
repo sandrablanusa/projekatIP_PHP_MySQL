@@ -7,6 +7,7 @@
         $email = $_POST['email'];
         $sifra = $_POST['sifra'];
 
+       
         if ($email == "admin@flajeri.rs" and $sifra == "admin123") {
             header("location:../administrator/navAdministrator.html");
         } else {
