@@ -17,7 +17,7 @@ if (isset($_POST['registrujSe'])) {
 
     //ukoliko nije dobar email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo '<script>alert("Proverite email adresu i pokušajte opet!");window.location.href=("../pocetnaNavigacija/pocetnaNavigacijaRegistrujSe.html")</script>';
+        echo '<script>alert("Proverite email adresu i pokušajte opet!");window.location.href=("../../pocetnaNavigacija/pocetnaNavigacijaRegistrujSe.html")</script>';
     } else {
         $postoji = false;
 
@@ -32,12 +32,12 @@ if (isset($_POST['registrujSe'])) {
             $rez = $veza->query($upit);
 
             if ($rez == 1) {
-                echo '<script>alert("Uspešna registracija");window.location.href=("../pocetnaNavigacija/pocetnaNavigacijaUlogujSe.html")</script>';
+                echo '<script>alert("Uspešna registracija");window.location.href=("../../pocetnaNavigacija/pocetnaNavigacijaUlogujSe.html")</script>';
             } else {
-                echo '<script>alert("Neuspešna registracija, pokušajte opet!");window.location.href=("../pocetnaNavigacija/pocetnaNavigacijaRegistrujSe.html")</script>';
+                echo '<script>alert("Neuspešna registracija, pokušajte opet!");window.location.href=("../../pocetnaNavigacija/pocetnaNavigacijaRegistrujSe.html")</script>';
             }
         } else {
-            echo '<script>alert("Email adresa već postoji!");window.location.href=("../pocetnaNavigacija/pocetnaNavigacijaRegistrujSe.html")</script>';
+            echo '<script>alert("Email adresa već postoji!");window.location.href=("../../pocetnaNavigacija/pocetnaNavigacijaRegistrujSe.html")</script>';
         }
     }
 

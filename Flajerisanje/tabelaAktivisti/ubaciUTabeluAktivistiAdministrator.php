@@ -17,7 +17,7 @@ if (isset($_POST['unesi'])) {
 
     //ukoliko nije dobar email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo '<script>alert("Proverite email adresu i pokušajte opet!");window.location.href=("../administrator/unesiAktivistu.html")</script>';
+        echo '<script>alert("Proverite email adresu i pokušajte opet!");window.location.href=("../../administrator/unesiAktivistu.html")</script>';
     } else {
         $postoji = false;
 
@@ -32,12 +32,12 @@ if (isset($_POST['unesi'])) {
             $rez = $veza->query($upit);
 
             if ($rez == 1) {
-                echo '<script>alert("Uspešno dodavanje novog aktiviste");window.location.href=("../administrator/unesiAktivistu.html")</script>';
+                echo '<script>alert("Uspešno dodavanje novog aktiviste");window.location.href=("../../administrator/unesiAktivistu.html")</script>';
             } else {
-                echo '<script>alert("Nije uspelo dodavanje aktiviste, pokušajte opet!");window.location.href=("../administrator/unesiAktivistu.html")</script>';
+                echo '<script>alert("Nije uspelo dodavanje aktiviste, pokušajte opet!");window.location.href=("../../administrator/unesiAktivistu.html")</script>';
             }
         } else {
-            echo '<script>alert("Email adresa već postoji!");window.location.href=("../administrator/unesiAktivistu.html")</script>';
+            echo '<script>alert("Email adresa već postoji!");window.location.href=("../../administrator/unesiAktivistu.html")</script>';
         }
     }
 

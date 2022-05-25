@@ -2,6 +2,7 @@
 
 $veza=mysqli_connect("localhost", "root", "");
 $sql="DROP DATABASE IF EXISTS Flajerisanje";
+mysqli_query($veza,$sql);
 
 $sql="CREATE DATABASE IF NOT EXISTS Flajerisanje DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci";
 mysqli_query($veza,$sql);
