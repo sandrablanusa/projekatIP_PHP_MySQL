@@ -14,34 +14,31 @@
         <!-- potrebni dodatak kodu-->
         <div class="osnova">
             <div class="container">
-                <div class="title">Unos adrese</div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="adresa">Adresa</label>
+                <form action="../Flajerisanje/tabelaUlice/unosAdreseUTabelu.php" method="post">
+                    <div class="title">Unos adrese</div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="adresa">Adresa</label>
+                        </div>
+                        <div class="col-75">
+                            <select id="adresa" name="adresa">
+                                <option selected disabled>--Izaberite iz liste--</option> 
+                                <?php include('izlistajUliceUUnesiAdresu.php') ?>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-75">
-                        <select id="adresa" name="adresa">
-                            <option selected disabled>--Izaberite iz liste--</option>
-                            <option value="adresa">Molerova</option>
-                            <option value="adresa">Narodni front</option>
-                            <option value="adresa">Balkanska</option>
-                            <option value="adresa">Admirala Geprata</option>
-                            <option value="adresa">Narodni front</option>
-                            <option value="adresa">Višnjička</option>
-                        </select>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="broj">Brojevi zgrada</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" name="brojevi" placeholder="Unesi brojeve">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="broj">Brojevi zgrada</label>
+                    <div class="button">
+                        <input type="submit" name="unesiAdresu" value="Unesi">
                     </div>
-                    <div class="col-75">
-                        <input type="text" id="adresa" name="broj" placeholder="Unesi brojeve">
-                    </div>
-                </div>
-                <div class="button">
-                    <input type="submit" value="Unesi">
-                </div>
+                </form>
             </div>
         </div>
     </div>

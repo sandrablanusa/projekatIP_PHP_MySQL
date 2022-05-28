@@ -6,9 +6,9 @@
     CREATE TABLE ulica (
         idUlice INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
         ulica VARCHAR(100) CHARACTER SET utf8 NOT NULL,
-        idFlajera INT NOT NULL,
-        brojevi VARCHAR(200) CHARACTER SET utf8 NOT NULL,
-        nedodeljeniBrojevi VARCHAR(200) CHARACTER SET utf8 NOT NULL)
+        idFlajera INT,
+        brojevi VARCHAR(200) CHARACTER SET utf8,
+        nedodeljeniBrojevi VARCHAR(200) CHARACTER SET utf8)
     EOT;
     
     mysqli_select_db($veza,'Flajerisanje');

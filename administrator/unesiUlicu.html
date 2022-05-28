@@ -15,15 +15,15 @@
             <div class="container">
                 <div class="title">Unos ulice</div>
                 <div class="content">
-                    <form action="#">
+                    <form action="../Flajerisanje/tabelaUlice/unosUliceUTabelu.php" method="post">
                         <div class="user-details">
                             <div class="input-box">
                                 <span class="details">Naziv ulice</span>
-                                <input type="text" required placeholder="Unesite naziv ulice" oninvalid="this.setCustomValidity('Morate uneti naziv ulice')" oninput="setCustomValidity('')">
+                                <input type="text" name="ulica" required placeholder="Unesite naziv ulice" oninvalid="this.setCustomValidity('Morate uneti naziv ulice')" oninput="setCustomValidity('')">
                             </div>
                         </div>
                         <div class="button">
-                            <input type="submit" value="Unesi">
+                            <input type="submit" name="unesi" value="Unesi">
                         </div>
                     </form>
                 </div>
