@@ -16,20 +16,20 @@
             <div class="container">
                 <div class="title">Unos flajera</div>
                 <div class="content">
-                    <form action="#">
+                    <form action="../Flajerisanje/tabelaFlajeri/unosFlajeraUTabelu.php" method="post">
                         <div class="user-details">
                             <div class="input-box">
                                 <span class="details">Naziv flajera</span>
-                                <input type="text" required placeholder="Unesite naziv flajera" oninvalid="this.setCustomValidity('Morate uneti naziv flajera')" oninput="setCustomValidity('')">
+                                <input type="text" name="naziv" required placeholder="Unesite naziv flajera" oninvalid="this.setCustomValidity('Morate uneti naziv flajera')" oninput="setCustomValidity('')">
                             </div>
                             <div class="input-box">
                                 <span class="details">Broj flajera</span>
-                                <input type="text" required placeholder="Unesite broj flajera" oninvalid="this.setCustomValidity('Morate uneti broj flajera')" oninput="setCustomValidity('')">
+                                <input type="text" name="brojFlajera" required placeholder="Unesite broj flajera" oninvalid="this.setCustomValidity('Morate uneti broj flajera')" oninput="setCustomValidity('')">
                             </div>
                         </div>
                         <div class="privatnost">
-                            <input type="radio" name="privat" id="dot-1">
-                            <input type="radio" name="privat" id="dot-2">
+                            <input type="radio" name="privat" id="dot-1" value="javan">
+                            <input type="radio" name="privat" id="dot-2" value="tajan">
                             <span class="privat-title">Privatnost flajera</span>
                             <div class="category">
                                 <label for="dot-1">
@@ -65,7 +65,7 @@
                             <span id="file-chosen">Nije izabran HTML </span>
                         </div>
                         <div class="button">
-                            <input type="submit" value="Sačuvaj">
+                            <input type="submit" name="sacuvaj" value="Sačuvaj">
                         </div>
                     </form>
                 </div>
