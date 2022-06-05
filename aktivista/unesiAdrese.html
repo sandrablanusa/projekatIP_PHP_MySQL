@@ -1,4 +1,5 @@
 <!doctype html>
+<?php session_start(); ?>
 <html>
 
 <head>
@@ -20,67 +21,24 @@
 	</style>
 </head>
 <body onload=display_ct()>
+<?php include('dugmiciKodAdresa.php') ?>
 	<div class="okvir">
 		<div id="vreme">
 			<span id='ct' ></span>
 		</div>
-		<?php include('../zaglavlje.php') ?>
-		<?php include('../navigacijaAktivista.php') ?>
-
-		<!-- unos adresa-->
-		<div class="adrese">
-			<div class="container">
-				<div class="title">Alocirane adrese</div>
-				<div class=" podaci">
-					<input type="checkbox">
-					<label> Zeleni venac 210. </label><br>
-					<input type="checkbox">
-					<label> Danteova 12. </label><br>
-					<input type="checkbox">
-					<label> Bulevar kralja Aleksandra 73.</label><br>
-					<input type="checkbox">
-					<label> Bulevar Nikole Tesle 84.</label><br>
-					<input type="checkbox">
-					<label> Dunavska 30.</label><br>
-					<input type="checkbox">
-					<label> Dunavska (Zemun) 30.</label><br>
-					<input type="checkbox">
-					<label> Svetog Marka 52. </label><br>
-					<input type="checkbox">
-					<label> Zeleni venac 210. </label><br>
-					<input type="checkbox">
-					<label> Danteova 12. </label><br>
-					<input type="checkbox">
-					<label> Bulevar kralja Aleksandra 73.</label><br>
-					<input type="checkbox">
-					<label> Bulevar Nikole Tesle 84.</label><br>
-					<input type="checkbox">
-					<label> Dunavska 30.</label><br>
-					<input type="checkbox">
-					<label> Dunavska (Zemun) 30.</label><br>
-					<input type="checkbox">
-					<label> Svetog Marka 52. </label><br>
-					<input type="checkbox">
-					<label> Zeleni venac 210. </label><br>
-					<input type="checkbox">
-					<label> Danteova 12. </label><br>
-					<input type="checkbox">
-					<label> Bulevar kralja Aleksandra 73.</label><br>
-					<input type="checkbox">
-					<label> Bulevar Nikole Tesle 84.</label><br>
-					<input type="checkbox">
-					<label> Dunavska 30.</label><br>
-					<input type="checkbox">
-					<label> Dunavska (Zemun) 30.</label><br>
-					<input type="checkbox">
-					<label> Svetog Marka 52. </label><br>
-				</div>
-				<div class="button">
-					<input type="submit" value="Unesi">
-				</div>
-			</div>
-		</div>
-	</div>
+        <?php include('../zaglavlje.php') ?>
+        <?php include('../navigacijaAktivista.php') ?>
+        
+        <!-- dodavanje informacija o flajerima -->
+        <div class="bojaSadrzaja" >
+			<form method="POST">
+                <ul class="listaFlajera">
+                    <h1>Alocirane adrese</h1>
+				    <?php include('listaAdresaAktivista.php') ?>
+                </ul>
+            </form>
+        </div>
+    </div>
 	<?php include('../futer.php') ?>
 </body>
 
