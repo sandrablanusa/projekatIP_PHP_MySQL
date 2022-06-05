@@ -13,7 +13,7 @@
         $brFlajera = is_null($red['brojPreostalihFlajera']) ? "" : $red['brojPreostalihFlajera'];
         echo "                <li>
         <div class=\"flex-container\">
-            <div class=\"content\">".$red['naziv']."</div>
+            <div class=\"content\"><a href=\"../Flajerisanje/tabelaFlajeri/".$red['HTMLFajl']."\">".$red['naziv']."</a></div>
             <div class=\"content\">Preostalo zgrada: ".$zgrade."</div>
             <div class=\"content\">Preostalo flajera: ".$brFlajera."</div>
             <div class=\"dugmiciKontejner\">

@@ -12,7 +12,7 @@
         //echo "<li><div class=\"content\">".$red['naziv']."</div></li>";
         echo "                <li>
         <div class=\"flex-container\">
-            <div class=\"content\">".$red['naziv']."</div>
+            <div class=\"content\"><a href=\"../Flajerisanje/tabelaFlajeri/".$red['HTMLFajl']."\">".$red['naziv']."</a></div>
             <div class=\"dugmiciKontejner\">
                 <div class=\"azurirajFlajer\">
                     <div class=\"button\">

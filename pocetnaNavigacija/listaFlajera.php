@@ -10,7 +10,7 @@
     for ($i=0; $i<$brojRedova; $i++){
         $red = mysqli_fetch_array($rez);
         if ($red['javan'] == true) {
-             echo "<li>".$red['naziv']." </li>";
+             echo "<li><a href=\"../Flajerisanje/tabelaFlajeri/".$red['HTMLFajl']."\">".$red['naziv']." </a></li>";
         }
        
     }
