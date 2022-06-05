@@ -20,8 +20,11 @@
 
         $upitAktivista = "SELECT * FROM flajerisanje.aktivisti WHERE idAktiviste = '$idAktiviste'";
         $rezAktivista = $veza->query($upitAktivista);
+
+        $upitFlajeri = "SELECT * FROM flajerisanje.flajeri WHERE idFlajera = '$idFlajera'";
+        $rezFlajeri = $veza->query($upitFlajeri);
     
-        if(mysqli_num_rows($rezUlica) != 0 and mysqli_num_rows($rezAktivista) != 0) {
+        if(mysqli_num_rows($rezUlica) != 0 and mysqli_num_rows($rezAktivista) != 0  and mysqli_num_rows($rezFlajeri) != 0) {
             $greska = false;
 
             // Ubacivanje u tabelu adrese
@@ -58,7 +61,6 @@
             }           
 
             // Ubacivanje u tabelu ulica
-
             $stariBrojevi = $redUlica['nedodeljeniBrojevi'];
             $stariBrojeviNiz = array_map('intval', explode(',', $stariBrojevi));
 
@@ -85,6 +87,18 @@
             $upit = "UPDATE flajerisanje.ulica SET 
                         idFlajera = '$idFlajera',
                         nedodeljeniBrojevi = '$preostaliBrojevi' WHERE idUlice = '$idUlice'";
+            $rez = $veza->query($upit);
+            if ($rez != 1) {
+                $greska = true;
+            }  
+
+            // Ubacivanje u tabelu flajeri
+            $redFlajer = mysqli_fetch_array($rezFlajeri);
+            $brojZgrada = is_null($redFlajer['brojZgrada']) ? count($brojeviZgrada) : $redFlajer['brojZgrada'] + count($brojeviZgrada);
+            $brojPreostalihZgrada = is_null($redFlajer['brojPreostalihZgrada']) ? count($brojeviZgrada) : $redFlajer['brojPreostalihZgrada'] + count($brojeviZgrada);
+            $upit = "UPDATE flajerisanje.flajeri SET 
+                        brojZgrada = '$brojZgrada',
+                        brojPreostalihZgrada = '$brojPreostalihZgrada' WHERE idFlajera = '$idFlajera'";
             $rez = $veza->query($upit);
             if ($rez != 1) {
                 $greska = true;
