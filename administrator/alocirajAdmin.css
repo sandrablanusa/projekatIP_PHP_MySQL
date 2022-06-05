@@ -338,17 +338,18 @@ img {
     margin-top: 6px;
 }
 
-.button {
+.container form .button {
     height: 45px;
+    width: 30%;
     /* margin:15px 0 */
     margin: 0 auto;
     display: block;
     margin-top: 15px;
 }
 
-.button input {
+.container form .button input {
     height: 100%;
-    width: 100%;
+    width: 80%;
     border-radius: 5px;
     padding: 10px;
     border: none;
@@ -361,17 +362,17 @@ img {
     background: #333;
 }
 
-.button input:hover {
+form .button input:hover {
     /* transform: scale(0.99); */
     background: red;
 }
 
-.button input:focus {
+form .button input:focus {
     opacity: 0.9;
     outline: 0;
 }
 
-.button input:active {
+form .button input:active {
     box-shadow: none;
     margin-top: 6px;
 }

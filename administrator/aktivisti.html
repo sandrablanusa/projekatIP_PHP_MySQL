@@ -4,18 +4,99 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="aktivisti.css" />
-</head>
+	<script src="../vreme.js" ></script> 
+	<style>
+		#vreme{
+			box-sizing: inherit;
+			height: 10px;
+			color: black;
+			background-color: white;
+			font-size: 14px;
+			text-align: end;
+			padding-right: 4px;
+			font-family: Ariel;
+			font-weight: 500;
+		}
+	</style>
 
-<body>
-    <div class="okvir">
+	<style>
+		#myInput {
+			display: block;
+			box-sizing: inherit;
+			margin-left: auto;
+			margin-right: auto;
+			padding-left: 5px;
+			margin-bottom: 15px;
+			list-style-type: none;
+			overflow:hidden; 
+			background-color: #fff;
+			width: 99%;
+			height: 25px;
+		}
+	</style>
+
+	<script>
+		function initPadding() {
+			let input = document.getElementById('myInput').value;
+			input=input.toLowerCase();
+			let x = document.getElementsByClassName('content');
+			
+			
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display="list-item";
+				x[i].style.padding = "10px";	
+			}
+			
+		}
+	</script>
+
+	<script>
+		function pretraga() {
+			let input = document.getElementById('myInput').value;
+			input=input.toLowerCase();
+			let x = document.getElementsByClassName('content');
+			
+
+			for (i = 0; i < x.length; i++) {
+				
+			const imePrezime = x[i].innerHTML.toLowerCase().split(" ");
+			const prezime = imePrezime[1];
+			const pocetakPrezimena = prezime.slice(0, input.length);
+
+				if (pocetakPrezimena != input) {
+					x[i].style.display="none";
+					x[i].style.padding = "0px";
+				}
+				else {
+					x[i].style.display="list-item";
+					x[i].style.padding = "10px";				
+				}
+			}
+			
+		}
+	</script>
+
+	<script>
+		function start(){
+			display_ct();
+			initPadding();
+		}
+	</script>
+</head>
+<body onload=start() >
+	<div class="okvir">
+		<div id="vreme">
+			<span id='ct' ></span>
+		</div>
         <?php include('../zaglavlje.php') ?>
         <?php include('../navigacijaAdministrator.php') ?>
         
         <!-- lista aktivista-->
         <div class="bojaSadrzaja" >
-            <ul class="listaAktivista">
+            <ul class="listaAktivista">				
                 <h1>Lista aktivista</h1>
-                <?php include('listaAktivista.php') ?>
+				<input type="text" id="myInput" onkeyup="pretraga()" placeholder="Pretraga po prezimenu...">
+               <?php include('listaAktivista.php') ?>
             </ul>
         </div>
     </div>

@@ -4,138 +4,39 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="azurirajAktivistu.css" />
+	<script src="../vreme.js" ></script> 
+	<style>
+		#vreme{
+			box-sizing: inherit;
+			height: 10px;
+			color: black;
+			background-color: white;
+			font-size: 14px;
+			text-align: end;
+			padding-right: 4px;
+			font-family: Ariel;
+			font-weight: 500;
+		}
+	</style>
 </head>
+<body onload=display_ct()>
+    <?php include('dugmiciKodAzurirajAktivistu.php') ?>
 
-<body>
-    <div class="okvir">
+	<div class="okvir">
+		<div id="vreme">
+			<span id='ct' ></span>
+		</div>
         <?php include('../zaglavlje.php') ?>
         <?php include('../navigacijaAdministrator.php') ?>
         
         <!-- dodavanje liste Aktivista -->
         <div class="bojaSadrzaja">
-            <ul class="listaAktivista">
-                <h1>Lista aktivista</h1>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Petar Perić</div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAktivistu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Obriši">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Marko Marković</div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAktivistu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Obriši">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Milica Jolić</div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAktivistu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Obriši">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Ana Perić</div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAktivistu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Obriši">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Nikola Stanković</div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAktivistu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Obriši">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Ivan Jovanović</div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAktivistu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Obriši">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Stanko Gavrić</div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAktivistu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Obriši">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-            </ul>
+            <form method="POST">
+				<ul class="listaAktivista">
+					<h1>Lista aktivista</h1>
+					<?php include('listaAktivistaAzurirajAktivistu.php') ?>
+				</ul>
+			</form>
         </div>
     </div>
     <?php include('../futer.php') ?>

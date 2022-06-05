@@ -1,148 +1,44 @@
 <!doctype html>
+<?php
+    session_start();
+	?>
 <html>
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="azurirajAdresu.css" />
+	<script src="../vreme.js" ></script> 
+	<style>
+		#vreme{
+			box-sizing: inherit;
+			height: 10px;
+			color: black;
+			background-color: white;
+			font-size: 14px;
+			text-align: end;
+			padding-right: 4px;
+			font-family: Ariel;
+			font-weight: 500;
+		}
+	</style>
 </head>
-
-<body>
-    <div class="okvir">
+<body onload=display_ct()>
+    <?php include('dugmiciKodAzurirajAdresu.php') ?>
+	<div class="okvir">
+		<div id="vreme">
+			<span id='ct' ></span>
+		</div>
         <?php include('../zaglavlje.php') ?>
         <?php include('../navigacijaAdministrator.php') ?>
         
         <!-- dodavanje liste ulica -->
         <div class="bojaSadrzaja">
-            <ul class="listaAdresa">
-                <h1>Lista adresa</h1>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Takovska</div>
-                        <div class="content">Spisak brojeva: 5, 27, 97, 116 </div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAdresu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Obriši">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Ivana Cankara</div>
-                        <div class="content">Spisak brojeva: 15, 67, 48 </div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAdresu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Obriši">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Svetog Marka</div>
-                        <div class="content">Spisak brojeva: 39, 115 </div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAdresu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Obriši">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Pinkijeva</div>
-                        <div class="content">Spisak brojeva: 88, 56, 14</div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAdresu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Obriši">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Gavrila Principa (Zemun)</div>
-                        <div class="content">Spisak brojeva: 51, 91</div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAdresu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Obriši">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Balkanska</div>
-                        <div class="content">Spisak brojeva: 68, 166, 143, 137</div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAdresu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Obriši">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Karađorđev trg</div>
-                        <div class="content">Spisak brojeva: 10</div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAdresu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Obriši">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-            </ul>
+			<form method="POST">
+            	<ul class="listaAdresa">
+                	<h1>Lista adresa</h1>
+                	<?php include('listaAdresaAzurirajAdresu.php') ?>             
+            	</ul>
+			</form>
         </div>
     </div>
     <?php include('../futer.php') ?>

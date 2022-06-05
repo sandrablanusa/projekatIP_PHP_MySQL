@@ -10,9 +10,9 @@ if (isset($_POST['unesiAdresu'])) {
     } else {
         $brojevi = $_POST['brojevi'];
         $brojeviInt = array_map('intval', explode(',', $brojevi));
-        $adresa = $_POST['adresa'];
+        $idUlice = $_POST['adresa'];
 
-        $upit1 = "SELECT * FROM flajerisanje.ulica WHERE ulica = '$adresa' ";
+        $upit1 = "SELECT * FROM flajerisanje.ulica WHERE idUlice = '$idUlice' ";
         $rez1 = $veza->query($upit1);
 
         $red = mysqli_fetch_array($rez1);
@@ -32,12 +32,16 @@ if (isset($_POST['unesiAdresu'])) {
             }
 
             if(!$postoji) {
-                $noviBrojevi = $noviBrojevi . ", " . $noviBr;
+                if(strlen($noviBrojevi) != 0) {
+                    $noviBrojevi = $noviBrojevi . ", " . $noviBr;
+                } else {
+                    $noviBrojevi = $noviBr;
+                }
             }
 
         }
 
-        $upit2 = "UPDATE flajerisanje.ulica SET brojevi = '$noviBrojevi' WHERE ulica = '$adresa' ";
+        $upit2 = "UPDATE flajerisanje.ulica SET brojevi = '$noviBrojevi' WHERE idUlice = '$idUlice' ";
         $rez2 = $veza->query($upit2);
 
         if ($rez2 == 1) {

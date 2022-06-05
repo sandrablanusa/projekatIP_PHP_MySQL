@@ -1,13 +1,32 @@
 <!doctype html>
+<?php 
+    session_start();
+?>
 <html>
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="unesiFlajerAdmin.css" />
+	<script src="../vreme.js" ></script> 
+	<style>
+		#vreme{
+			box-sizing: inherit;
+			height: 10px;
+			color: black;
+			background-color: white;
+			font-size: 14px;
+			text-align: end;
+			padding-right: 4px;
+			font-family: Ariel;
+			font-weight: 500;
+		}
+	</style>
 </head>
-
-<body>
-    <div class="okvir">
+<body onload=display_ct()>
+	<div class="okvir">
+		<div id="vreme">
+			<span id='ct' ></span>
+		</div>
         <?php include('../zaglavlje.php') ?>
         <?php include('../navigacijaAdministrator.php') ?>
 
@@ -16,20 +35,36 @@
             <div class="container">
                 <div class="title">Unos flajera</div>
                 <div class="content">
-                    <form action="../Flajerisanje/tabelaFlajeri/unosFlajeraUTabelu.php" method="post">
+                    <form action="../Flajerisanje/tabelaFlajeri/unosFlajeraUTabelu.php" method="post" enctype="multipart/form-data">
                         <div class="user-details">
                             <div class="input-box">
                                 <span class="details">Naziv flajera</span>
-                                <input type="text" name="naziv" required placeholder="Unesite naziv flajera" oninvalid="this.setCustomValidity('Morate uneti naziv flajera')" oninput="setCustomValidity('')">
+                                <input type="text" name="naziv"  placeholder="Unesite naziv flajera"
+                                    value="<?php if(isset($_SESSION["flajerRed"])) {echo $_SESSION["flajerRed"]['naziv'];} ?>"
+                                    <?php if(!isset($_SESSION["flajerRed"])) {  
+                                        echo " required oninvalid=\"this.setCustomValidity('Morate uneti naziv flajera')\" oninput=\"setCustomValidity('')\"";
+                                     } ?>
+                                 >
                             </div>
                             <div class="input-box">
                                 <span class="details">Broj flajera</span>
-                                <input type="text" name="brojFlajera" required placeholder="Unesite broj flajera" oninvalid="this.setCustomValidity('Morate uneti broj flajera')" oninput="setCustomValidity('')">
+                                <input type="text" name="brojFlajera" placeholder="Unesite broj flajera" 
+                                <?php if(!isset($_SESSION["flajerRed"])) {  
+                                        echo " required oninvalid=\"this.setCustomValidity('Morate uneti naziv flajera')\" oninput=\"setCustomValidity('')\"";
+                                     } ?>
+                                >
                             </div>
                         </div>
                         <div class="privatnost">
-                            <input type="radio" name="privat" id="dot-1" value="javan">
-                            <input type="radio" name="privat" id="dot-2" value="tajan">
+                            <input type="radio" name="privat" id="dot-1" value="javan" 
+                                <?php if(isset($_SESSION["flajerRed"])) {
+                                        if($_SESSION["flajerRed"]['javan'] == 1) { echo "checked=\"checked\"";}
+                                    } ?>
+                            >
+                            <input type="radio" name="privat" id="dot-2" value="tajan"
+                            <?php if(isset($_SESSION["flajerRed"])) {
+                                        if($_SESSION["flajerRed"]['javan'] == 0) { echo "checked=\"checked\"";}
+                                    } ?>>
                             <span class="privat-title">Privatnost flajera</span>
                             <div class="category">
                                 <label for="dot-1">
@@ -44,25 +79,13 @@
                         </div>
 
                         <div class="dodavanjePDF">
-                            <!-- actual upload which is hidden -->
-                            <input type="file" id="actual-btn" hidden />
-
-                            <!-- our custom upload button -->
-                            <label for="actual-btn">Dodaj PDF flajera</label>
-
-                            <!-- name of file chosen -->
-                            <span id="file-chosen">Nije izabran PDF </span>
+                            <span id="file-chosen">Dodaj PDF flajer:  </span>
+                            <input type="file" name="pdfDugme" id="pdfDugme" >
                         </div>
 
                         <div class="dodavanjeHTML">
-                            <!-- actual upload which is hidden -->
-                            <input type="file" id="actual-btn" hidden />
-
-                            <!-- our custom upload button -->
-                            <label for="actual-btn">Dodaj HTML flajera</label>
-
-                            <!-- name of file chosen -->
-                            <span id="file-chosen">Nije izabran HTML </span>
+                            <span id="file-chosen">Dodaj HTML flajer: </span>
+                            <input type="file" name="htmlDugme" id="htmlDugme" >
                         </div>
                         <div class="button">
                             <input type="submit" name="sacuvaj" value="Sačuvaj">

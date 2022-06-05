@@ -384,44 +384,18 @@ form .button input:active {
   .dodavanjePDF{
     position: inherit;
     margin-top: 30px;
-    font-size: 14px;
-
-  }
-  .dodavanjePDF label {
-    background-color: #333;
-    color: white;
-    padding: 0.5rem;
-    font-family: sans-serif;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
-
-  .dodavanjePDF #file-chosen{
-    margin-left: 0.3rem;
-    font-family: sans-serif;
+	margin-right: 10px;
+    font-size: 18px;
   }
 
   .dodavanjeHTML{
     position: inherit;
     margin-top: 30px;
-    font-size: 14px;
+    font-size: 18px;
+	font-family: serif;
+	margin-right: 10px;
+  }
 
-  }
-  .dodavanjeHTML label {
-    background-color: #333;
-    color: white;
-    padding: 0.5rem;
-    font-family: sans-serif;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
-  
-  .dodavanjeHTML #file-chosen{
-    margin-left: 0.3rem;
-    font-family: sans-serif;
-  }
 /*-------------------------------------------------------media upit ------------------------------*/
 @media all and (max-width : 768px) {
 

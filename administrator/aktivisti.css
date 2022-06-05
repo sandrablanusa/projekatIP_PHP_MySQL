@@ -257,6 +257,11 @@ img {
 	background-color: #e6e6e6;
 }
 
+.listaAktivista input{
+	border: 1px solid #ccc;
+	transition: all 0.3s ease;
+}
+
 .listaAktivista h1 {
     font-size: 25px;
     font-weight: 500;
@@ -286,7 +291,6 @@ ul {
 
 li {
 	position: relative;
-	padding: 10px;
 	margin-bottom: 2px;
 	background-color: #fff;
 }

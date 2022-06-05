@@ -4,10 +4,26 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="brojFlajeraa.css" />
+	<script src="../vreme.js" ></script> 
+	<style>
+		#vreme{
+			box-sizing: inherit;
+			height: 10px;
+			color: black;
+			background-color: white;
+			font-size: 14px;
+			text-align: end;
+			padding-right: 4px;
+			font-family: Ariel;
+			font-weight: 500;
+		}
+	</style>
 </head>
-
-<body>
-    <div class="okvir">
+<body onload=display_ct()>
+	<div class="okvir">
+		<div id="vreme">
+			<span id='ct' ></span>
+		</div>
         <?php include('../zaglavlje.php') ?>
         <?php include('../navigacijaAktivista.php') ?>
 
