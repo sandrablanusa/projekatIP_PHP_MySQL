@@ -321,6 +321,7 @@ img {
 
 .button {
     height: 45px;
+    width: 30%;
     /* margin:15px 0 */
     margin: 0 auto;
     display: block;
@@ -329,7 +330,7 @@ img {
 
 .button input {
     height: 100%;
-    width: 100%;
+    width: 80%;
     border-radius: 5px;
     padding: 10px;
     border: none;

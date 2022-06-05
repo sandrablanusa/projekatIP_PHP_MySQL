@@ -1,4 +1,13 @@
-<!doctype html>
+<?php 
+    $is_page_refreshed = (isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] == 'max-age=0');
+ 
+    if(!$is_page_refreshed) {
+        session_start();
+        session_unset();
+        session_destroy();
+    }
+    session_start();
+?>
 <html>
 
 <head>
@@ -18,83 +27,89 @@
 			font-weight: 500;
 		}
 	</style>
+
 </head>
 <body onload=display_ct()>
+
 	<div class="okvir">
 		<div id="vreme">
 			<span id='ct' ></span>
 		</div>
         <?php include('../zaglavlje.php') ?>
         <?php include('../navigacijaAktivista.php') ?>
-
-        <!--opotreban ostatak koda-->
+        <?php
+            if (isset($_POST['izaberiAdresu'])) {
+                $_SESSION['idUlice'] = $_POST['izaberiAdresu'];
+            }
+            if (isset($_POST['flajeri'])) {
+                $_SESSION['idFlajera'] = $_POST['flajeri'];
+            }
+            if (isset($_POST['brojFlajera'])) {
+                $_SESSION['brojFlajera'] = $_POST['brojFlajera'];
+            }
+        ?>
+        <!-- potrebni dodatak kodu-->
         <div class="osnova">
             <div class="container">
-                <div class="title">Zahtevi</div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="flajeri">Flajeri</label>
+                    <div class="title">Zahtevi</div>
+                    
+                    <form method="POST">
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="flajeri">Flajeri</label>
+                            </div>
+                            <div class="col-75">
+                                <select name="flajeri" onchange="this.form.submit()">
+                                    <option selected disabled>--Izaberite iz liste--</option>
+                                    <?php include('../administrator/izlistajFlajereAlociraj.php') ?>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                    <form method="POST">
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="brojFlajera">Broj flajera</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" name="brojFlajera" placeholder="Unesi broj flajera" onchange="this.form.submit()"
+                                 value="<?php if(isset($_SESSION['brojFlajera'])) {echo $_SESSION['brojFlajera'];} ?>"
+                                >
+                            </div>
+                        </div>
+                    </form>
+                <form method="POST">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="adresa">Ulica</label>
+                        </div>
+                        <div class="col-75">
+                                <select name="izaberiAdresu" onchange="this.form.submit()">
+                                    <option selected disabled value="">--Izaberite iz liste--</option>
+                                    <?php include('../administrator/izlistajUliceUAlociraj.php') ?>
+                                </select>
+                        </div>
                     </div>
-                    <div class="col-75">
-                        <select id="flajeri" name="flajeri">
-                            <option selected disabled>--Izaberite iz liste--</option>
-                            <option value="flajeri">Flajer 1</option>
-                            <option value="flajeri">Flajer 2 </option>
-                            <option value="flajeri">Flajer 3</option>
-                            <option value="flajeri">Flajer 4</option>
-                            <option value="flajeri">Flajer 5</option>
-                            <option value="flajeri">Flajer 6</option>
-                            <option value="flajeri">Flajer 7</option>
-                        </select>
+                </form>
+                <form action="../Flajerisanje/tabelaZahtevi/ubaciUTabeluZahtevi.php" method="POST">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="poljeBrojevi">Adrese: brojevi</label>
+                        </div>
+                        <div class="col-76">
+                            <select multiple name="brojeviZgrada[]">
+                                <option selected disabled value="">- CRTL za vise brojeva--</option>
+                                <?php include('../administrator/izlistajBrojeveAlociraj.php') ?>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="brojFlajera">Broj flajera</label>
+                    <div class="button">
+                        <input type="submit" name="Unesi" value="Unesi">
                     </div>
-                    <div class="col-75">
-                        <input type="text" name="brojFlajera" placeholder="Unesi broj flajera">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="adresa">Ulica</label>
-                    </div>
-                    <div class="col-75">
-                        <select id="adresa" name="adresa">
-                            <option selected disabled>--Izaberite iz liste--</option>
-                            <option value="adresa">Molerova</option>
-                            <option value="adresa">Narodni front</option>
-                            <option value="adresa">Balkanska</option>
-                            <option value="adresa">Admirala Geprata</option>
-                            <option value="adresa">Narodni front</option>
-                            <option value="adresa">Višnjička</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="poljeBrojevi">Adrese: brojevi</label>
-                    </div>
-                    <div class="col-76">
-                        <select multiple>
-                            <option selected disabled>-CTRL za više adresa--</option>
-                            <option>24</option>
-                            <option>88</option>
-                            <option>22</option>
-                            <option>71</option>
-                            <option>73</option>
-                            <option>76</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="button">
-                    <input type="submit" value="Unesi">
-                </div>
+                </form>
             </div>
         </div>
     </div>
     <?php include('../futer.php') ?>
 </body>
-
 </html>

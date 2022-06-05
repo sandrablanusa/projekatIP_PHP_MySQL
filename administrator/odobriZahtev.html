@@ -1,4 +1,7 @@
 <!doctype html>
+<?php
+    session_start();
+	?>
 <html>
 
 <head>
@@ -20,6 +23,7 @@
 	</style>
 </head>
 <body onload=display_ct()>
+    <?php include('dugmiciKodOdobriZahtev.php') ?>
 	<div class="okvir">
 		<div id="vreme">
 			<span id='ct' ></span>
@@ -28,129 +32,13 @@
         <?php include('../navigacijaAdministrator.php') ?>
         <!-- dodavanje liste Zahteva -->
         <div class="bojaSadrzaja">
-            <ul class="listaZahteva">
-                <h1>Lista zahteva</h1>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Zahtev 1</div>
-                        <div class="dugmiciKontejner">
-                            <div class="odobriZahtev">
-                                <div class="button">
-                                    <input type="submit" value="Odobri">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Odbij">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Zahtev 2</div>
-                        <div class="dugmiciKontejner">
-                            <div class="odobriZahtev">
-                                <div class="button">
-                                    <input type="submit" value="Odobri">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Odbij">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Zahtev 3</div>
-                        <div class="dugmiciKontejner">
-                            <div class="odobriZahtev">
-                                <div class="button">
-                                    <input type="submit" value="Odobri">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Odbij">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Zahtev 4</div>
-                        <div class="dugmiciKontejner">
-                            <div class="odobriZahtev">
-                                <div class="button">
-                                    <input type="submit" value="Odobri">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Odbij">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Zahtev 5</div>
-                        <div class="dugmiciKontejner">
-                            <div class="odobriZahtev">
-                                <div class="button">
-                                    <input type="submit" value="Odobri">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Odbij">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Zahtev 6</div>
-                        <div class="dugmiciKontejner">
-                            <div class="odobriZahtev">
-                                <div class="button">
-                                    <input type="submit" value="Odobri">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Odbij">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Zahtev 7</div>
-                        <div class="dugmiciKontejner">
-                            <div class="odobriZahtev">
-                                <div class="button">
-                                    <input type="submit" value="Odobri">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Odbij">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+			<form method="POST">
+                <ul class="listaZahteva">
+                    <h1>Lista zahteva</h1>
+                    <?php include('listaZahtevaOdobriZahtev.php') ?>
 
-            </ul>
+                </ul>
+            </form>
         </div>
     </div>
     <?php include('../futer.php') ?>

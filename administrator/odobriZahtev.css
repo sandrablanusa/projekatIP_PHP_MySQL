@@ -290,7 +290,7 @@ li {
 }
 
 .content {
-    align-items: center;
+    text-align: left;
 }
 .flex-container {
 	display: flex;
