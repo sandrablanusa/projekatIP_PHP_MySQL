@@ -1,9 +1,12 @@
 <!doctype html>
+<?php
+    session_start();
+	?>
 <html>
 
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="flajeri.css" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="flajeri.css" />
 	<script src="../vreme.js" ></script> 
 	<style>
 		#vreme{
@@ -20,57 +23,25 @@
 	</style>
 </head>
 <body onload=display_ct()>
+    <?php include('dugmiciKodFlajerAktivista.php') ?>
 	<div class="okvir">
 		<div id="vreme">
 			<span id='ct' ></span>
 		</div>
-		<?php include('../zaglavlje.php') ?>
-		<?php include('../navigacijaAktivista.php') ?>
-
-		<div class="flajeri">
-			<div class="container">
-				<div class="title">Spisak flajera</div>
-				<div class=" podaci">
-					<input type="radio" name="test">
-					<label> Dostupni flajer 1 </label><br>
-					<input type="radio" name="test">
-					<label> Dostupni flajer 2 </label><br>
-					<input type="radio" name="test">
-					<label> Dostupni flajer 3 </label><br>
-					<input type="radio" name="test">
-					<label> Dostupni flajer 4</label><br>
-					<input type="radio" name="test">
-					<label> Dostupni flajer 5</label><br>
-					<input type="radio" name="test">
-					<label> Dostupni flajer 6</label><br>
-					<input type="radio" name="test">
-					<label> Dostupni flajer 7</label><br>
-					<input type="radio" name="test">
-					<label> Dostupni flajer 8</label><br>
-					<input type="radio" name="test">
-					<label> Dostupni flajer 9</label><br>
-					<input type="radio" name="test">
-					<label> Dostupni flajer 10</label><br>
-					<input type="radio" name="test">
-					<label> Dostupni flajer 11</label><br>
-					<input type="radio" name="test">
-					<label> Dostupni flajer 12</label><br>
-					<input type="radio" name="test">
-					<label> Dostupni flajer 13</label><br>
-					<input type="radio" name="test">
-					<label> Dostupni flajer 14</label><br>
-					<input type="radio" name="test">
-					<label> Dostupni flajer 15</label><br>
-					<input type="radio" name="test">
-					<label> Dostupni flajer 16</label><br>
-				</div>
-				<div class="button">
-					<input type="submit" value="Unesi">
-				</div>
-			</div>
-		</div>
-	</div>
-	<?php include('../futer.php') ?>
+        <?php include('../zaglavlje.php') ?>
+        <?php include('../navigacijaAktivista.php') ?>
+        
+        <!-- dodavanje informacija o flajerima -->
+        <div class="bojaSadrzaja" >
+			<form method="POST">
+                <ul class="listaFlajera">
+                    <h1>Informacije o flajerima</h1>
+				    <?php include('listaFlajeraAktivista.php') ?>
+                </ul>
+            </form>
+        </div>
+    </div>
+    <?php include('../futer.php') ?>
 </body>
 
 </html>

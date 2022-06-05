@@ -1,4 +1,7 @@
 <!doctype html>
+<?php 
+    session_start();
+?>
 <html>
 
 <head>
@@ -30,17 +33,20 @@
         <div class="brFlajera">
             <div class="container">
                 <div class="title">Unos broja preostalih flajera</div>
-                <div class="content">
+                <div class="title2"> Ime flajera: <?php echo $_SESSION["imeFlajeraAzuriraj"] ?></div>
+                <div class="title2"> Preostalo flajera: <?php echo $_SESSION["brFlajeraAzuriraj"] ?></div>
+
+			    <form action="unesiBrojPreostalihFlajera.php" method="POST">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details"></span>
-                            <input type="text" required placeholder="Unesite broj" oninvalid="this.setCustomValidity('Morate uneti broj preostalih flajera')" oninput="setCustomValidity('')">
+                            <input type="text" name="broj" required placeholder="Unesite broj" oninvalid="this.setCustomValidity('Morate uneti broj preostalih flajera')" oninput="setCustomValidity('')">
                         </div>
                     </div>
                     <div class="button">
-                        <input type="submit" value="Unesi">
+                        <input type="submit" name="unesi" value="Unesi">
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

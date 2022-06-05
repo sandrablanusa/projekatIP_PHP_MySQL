@@ -140,6 +140,8 @@ img {
 }
 
 .container {
+	display: flex;
+	flex-direction: column;
 	position: relative;
 	max-width: 700px;
 	width: 100%;
@@ -155,28 +157,36 @@ img {
 	margin-left: auto;
 }
 .container .title {
-    font-size: 22px;
+    font-size: 30px;
     padding: 20px;
-    font-style: italic;
     text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1), 7px 7px 0px rgba(0, 0, 0, 0.05);
 	position: relative;
 	text-align: center;
 }
 
-
-
-.content form .user-details {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	margin: 20px 0 12px 0;
+.container .title2 {
+    font-size: 18px;
+	position: relative;
+	padding-bottom: 10px;
 	text-align: center;
 }
 
+.content form .user-details {
+	margin: 20px 0 12px 0;
+	text-align: center;
+
+}
+
 .user-details .input-box {
-	margin-bottom: 15px;
+	margin-bottom: 7px;
+	margin-top: 20px;
 	width: 200px;
     height: 45px;
+	position: relative;
+	top: 0;
+	left: 40%;
+	-ms-transform: translate(0, -40%);
+	transform: translate(0, -40%);
 }
 
  .input-box span.details {
@@ -210,6 +220,11 @@ img {
     width: 200px;
 	margin-top: 10px;
 	
+	position: relative;
+	top: 0;
+	left: 40%;
+	-ms-transform: translate(0, -40%);
+	transform: translate(0, -40%);
 }
 
  .button input {
