@@ -73,3 +73,4 @@
 
     session_destroy();
 ?>
+

@@ -15,7 +15,7 @@
 
         $brojeviNiz = array_map('intval', explode(',', $brojevi));
 
-        if(!empty($brojeviNiz)) {
+        if(isset($brojevi)) {
             foreach($brojeviNiz as $br) {
                 echo "<option>".$br."</option>";
             }
