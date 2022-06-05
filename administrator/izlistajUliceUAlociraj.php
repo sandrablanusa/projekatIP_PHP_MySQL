@@ -9,8 +9,10 @@
 
     for ($i=0; $i<$brojRedova; $i++){
         $red = mysqli_fetch_array($rez);
-        $selected = $_SESSION['idUlice'] != $red['idUlice'] ? "" : "selected";
-        echo "<option value=".$red['idUlice']." ".$selected." >".$red['ulica']."</option>";
+        if(is_null($red['idFlajera'])){
+            $selected = $_SESSION['idUlice'] != $red['idUlice'] ? "" : "selected";
+            echo "<option value=".$red['idUlice']." ".$selected." >".$red['ulica']."</option>";
+        }
     }
 
     $veza->close();

@@ -57,6 +57,38 @@
                 $greska = true;
             }           
 
+            // Ubacivanje u tabelu ulica
+
+            $stariBrojevi = $redUlica['nedodeljeniBrojevi'];
+            $stariBrojeviNiz = array_map('intval', explode(',', $stariBrojevi));
+
+            $preostaliBrojevi = "";
+
+            foreach($stariBrojeviNiz as $br1) {
+                $postoji = false;
+
+                foreach($brojeviZgrada as $br2) {
+                    if($br1 == $br2) {
+                        $postoji = true;
+                    }
+                }
+
+                if(!$postoji) {
+                    if($preostaliBrojevi == "") {
+                        $preostaliBrojevi = $br1;
+                    } else {
+                        $preostaliBrojevi = $preostaliBrojevi.", ".$br1;
+                    }
+                }
+            }
+
+            $upit = "UPDATE flajerisanje.ulica SET 
+                        idFlajera = '$idFlajera',
+                        nedodeljeniBrojevi = '$preostaliBrojevi' WHERE idUlice = '$idUlice'";
+            $rez = $veza->query($upit);
+            if ($rez != 1) {
+                $greska = true;
+            }  
 
             if (!$greska) {
                 echo '<script>alert("Uspešno alociranje podataka");window.location.href=("../../administrator/alocirajAdmin.html")</script>';
