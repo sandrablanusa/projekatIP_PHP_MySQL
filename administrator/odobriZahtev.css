@@ -271,6 +271,8 @@ img {
     display: block;
     box-sizing: inherit;
     width: 70%;
+	max-height: 800px;
+	height: 90%;
     overflow-y: auto;
     padding: 10px;
     background-color: #e6e6e6;
