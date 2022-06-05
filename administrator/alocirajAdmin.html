@@ -48,51 +48,58 @@
         <!-- potrebni dodatak kodu-->
         <div class="osnova">
             <div class="container">
-                <form method="POST">
                     <div class="title">Alociranje podataka</div>
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="flajeri">Flajeri</label>
-                        </div>
-                        <div class="col-75">
-                            <select name="flajeri">
-                                <option selected disabled>--Izaberite iz liste--</option>
-                                <?php include('izlistajFlajereAlociraj.php') ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="brojFlajera">Broj flajera</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="text" name="brojFlajera" placeholder="Unesi broj flajera" value=
-                                "<?php if(isset($_SESSION['brojFlajera'])) {echo $_SESSION['brojFlajera'];} ?>"
-                            >
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="aktivista">Aktivista</label>
-                        </div>
-                        <div class="col-75">
-                            <select id="aktivista" name="aktivista">
-                                <option selected disabled>--Izaberite iz liste--</option>
-                                <?php include('izlistajAktivisteAlociraj.php') ?>
-                            </select>
-                        </div>
-                    </div>
+                    
+                    <form method="POST">
                         <div class="row">
                             <div class="col-25">
-                                <label for="adresa">Ulica</label>
+                                <label for="flajeri">Flajeri</label>
                             </div>
                             <div class="col-75">
-                                    <select name="izaberiAdresu" onchange="this.form.submit()">
-                                        <option selected disabled value="">--Izaberite iz liste--</option>
-                                        <?php include('izlistajUliceUUnesiAdresu.php') ?>
-                                    </select>
+                                <select name="flajeri" onchange="this.form.submit()">
+                                    <option selected disabled>--Izaberite iz liste--</option>
+                                    <?php include('izlistajFlajereAlociraj.php') ?>
+                                </select>
                             </div>
                         </div>
+                    </form>
+                    <form method="POST">
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="brojFlajera">Broj flajera</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" name="brojFlajera" placeholder="Unesi broj flajera" onchange="this.form.submit()"
+                                 value="<?php if(isset($_SESSION['brojFlajera'])) {echo $_SESSION['brojFlajera'];} ?>"
+                                >
+                            </div>
+                        </div>
+                    </form>
+                    <form method="POST">
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="aktivista">Aktivista</label>
+                            </div>
+                            <div class="col-75">
+                                <select id="aktivista" name="aktivista" onchange="this.form.submit()">
+                                    <option selected disabled>--Izaberite iz liste--</option>
+                                    <?php include('izlistajAktivisteAlociraj.php') ?>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                <form method="POST">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="adresa">Ulica</label>
+                        </div>
+                        <div class="col-75">
+                                <select name="izaberiAdresu" onchange="this.form.submit()">
+                                    <option selected disabled value="">--Izaberite iz liste--</option>
+                                    <?php include('izlistajUliceUAlociraj.php') ?>
+                                </select>
+                        </div>
+                    </div>
                 </form>
                 <form action="../Flajerisanje/tabelaAdrese/ubaciUTabeluAdreseIzAlociraj.php" method="POST">
                     <div class="row">

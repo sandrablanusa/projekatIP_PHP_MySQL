@@ -11,18 +11,17 @@
     if(mysqli_num_rows($rez) != 0) {
 
         $red = mysqli_fetch_array($rez);
-        $brojevi = $red['brojevi'];
+        $brojevi = $red['nedodeljeniBrojevi'];
 
         $brojeviNiz = array_map('intval', explode(',', $brojevi));
 
-        foreach($brojeviNiz as $br) {
-            echo "<option>".$br."</option>";
+        if(!empty($brojeviNiz)) {
+            foreach($brojeviNiz as $br) {
+                echo "<option>".$br."</option>";
+            }
         }
 
     }
 
     $veza->close();
-
-
-
 ?>

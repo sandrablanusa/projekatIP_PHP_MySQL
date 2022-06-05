@@ -1,6 +1,12 @@
 <?php
     session_start();
     if (isset($_POST['Alociraj'])) {
+
+        if(empty($_SESSION['idUlice']) or empty($_SESSION['idFlajera']) or 
+           empty($_SESSION['idAktiviste']) or empty($_SESSION['brojFlajera'])) {
+            echo '<script>alert("Nisu uneta sva polja, pokušajte opet!");window.location.href=("../../administrator/alocirajAdmin.html")</script>';
+        }
+
         $veza = new mysqli("localhost", "root", "");
         $veza->set_charset("utf8");
         $idUlice = $_SESSION['idUlice'];
@@ -23,7 +29,7 @@
             $imeUlice = $redUlica['ulica'];
 
             foreach($brojeviZgrada as $br) {
-                $upit = "INSERT INTO flajerisanje.adrese(idUlice, idAktiviste, idFlajera, brFlajera, ulica, brojZgrade) VALUES ('$idUlice', '$idAktiviste', '$idFlajera', '$brFlajera', '$imeUlice', '$br')";
+                $upit = "INSERT INTO flajerisanje.adrese(idUlice, idAktiviste, idFlajera, ulica, brojZgrade) VALUES ('$idUlice', '$idAktiviste', '$idFlajera', '$imeUlice', '$br')";
                 $rez = $veza->query($upit);
                 if ($rez != 1) {
                     $greska = true;
@@ -45,7 +51,7 @@
             $upit = "UPDATE flajerisanje.aktivisti SET 
                         listaIDFlajera = '$listaFlajera',
                         listaBrojeva = '$listaBrojeva',
-                        listaDatuma = '$listaDatuma' WHERE idAktiviste = $idAktiviste";
+                        listaDatumaDodele = '$listaDatuma' WHERE idAktiviste = '$idAktiviste'";
             $rez = $veza->query($upit);
             if ($rez != 1) {
                 $greska = true;
@@ -55,11 +61,11 @@
             if (!$greska) {
                 echo '<script>alert("Uspešno alociranje podataka");window.location.href=("../../administrator/alocirajAdmin.html")</script>';
             } else {
-            //    echo '<script>alert("Desila se greška, pokušajte opet!");window.location.href=("../../administrator/alocirajAdmin.html")</script>';
+                echo '<script>alert("Desila se greška, pokušajte opet!");window.location.href=("../../administrator/alocirajAdmin.html")</script>';
             }
 
         } else {
-            //echo '<script>alert("Desila se greška, pokušajte opet!");window.location.href=("../../administrator/alocirajAdmin.html")</script>';
+            echo '<script>alert("Desila se greška, pokušajte opet!");window.location.href=("../../administrator/alocirajAdmin.html")</script>';
         }
 
         $veza->close();

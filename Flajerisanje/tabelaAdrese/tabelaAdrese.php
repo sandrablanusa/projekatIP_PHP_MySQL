@@ -10,7 +10,6 @@
         idFlajera INT ,
         idAktiviste INT ,
         flajerisano BOOLEAN ,
-        brFlajera INT,
         ulica VARCHAR(100) CHARACTER SET utf8 ,
         datumKraj VARCHAR(50) CHARACTER SET utf8 )
     EOT;

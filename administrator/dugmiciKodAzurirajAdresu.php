@@ -14,7 +14,7 @@
 
     if(isset($_POST["azuriraj"])){
         $idUlice=$_POST["azuriraj"];
-        $_SESSION["idUlice"] = $idUlice;
+        $_SESSION["idUliceAzuriraj"] = $idUlice;
         echo '<script>window.location.href=("unesiAdresu.html")</script>';
         exit();
     }

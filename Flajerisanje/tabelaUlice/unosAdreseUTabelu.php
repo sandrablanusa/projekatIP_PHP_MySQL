@@ -21,13 +21,25 @@ if (isset($_POST['unesiAdresu'])) {
 
         $noviBrojevi = $stariBrojevi;
 
+        $stariNedodeljeniBrojevi = $red['nedodeljeniBrojevi'];
+        $stariNedodeljeniBrojeviInt = array_map('intval', explode(',', $stariNedodeljeniBrojevi));
+
+        $noviNedodeljeniBrojevi = $stariNedodeljeniBrojevi;
+
         foreach($brojeviInt as $noviBr) {
 
             $postoji = False;
+            $postojiNedodeljen = False;
 
             foreach($stariBrojeviInt as $stariBr) {
                 if($stariBr == $noviBr) {
                     $postoji = True;
+                }
+            }
+
+            foreach($stariNedodeljeniBrojeviInt as $stariBr) {
+                if($stariBr == $noviBr) {
+                    $postojiNedodeljen = True;
                 }
             }
 
@@ -39,9 +51,19 @@ if (isset($_POST['unesiAdresu'])) {
                 }
             }
 
+            if(!$postojiNedodeljen) {
+                if(strlen($noviNedodeljeniBrojevi) != 0) {
+                    $noviNedodeljeniBrojevi = $noviNedodeljeniBrojevi . ", " . $noviBr;
+                } else {
+                    $noviNedodeljeniBrojevi = $noviBr;
+                }
+            }
+
         }
 
-        $upit2 = "UPDATE flajerisanje.ulica SET brojevi = '$noviBrojevi' WHERE idUlice = '$idUlice' ";
+        $upit2 = "UPDATE flajerisanje.ulica 
+        SET brojevi = '$noviBrojevi', nedodeljeniBrojevi = '$noviNedodeljeniBrojevi' 
+        WHERE idUlice = '$idUlice' ";
         $rez2 = $veza->query($upit2);
 
         if ($rez2 == 1) {
