@@ -1,0 +1,80 @@
+<!doctype html>
+<?php 
+    session_start();
+?>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="unesiAktivistu.css" />
+	<script src="../vreme.js" ></script> 
+	<style>
+		#vreme{
+			box-sizing: inherit;
+			height: 10px;
+			color: black;
+			background-color: white;
+			font-size: 14px;
+			text-align: end;
+			padding-right: 4px;
+			font-family: Ariel;
+			font-weight: 500;
+		}
+	</style>
+</head>
+<body onload=display_ct()>
+	<div class="okvir">
+		<div id="vreme">
+			<span id='ct' ></span>
+		</div>
+		<?php include('../zaglavlje.php') ?>
+		<?php include('../navigacijaAdministrator.php') ?>
+
+		<div class="dodavanjeAktiviste">
+			<div class="container">
+				<div class="title">Ažuriranje aktiviste</div>
+				<div class="content">
+					<form action="../Flajerisanje/tabelaAktivisti/ubaciAzuriranogAktivistuAdministrator.php" method="post">
+						<div class="user-details">
+							<div class="input-box">
+								<span class="details">Ime</span>
+								<input type="text" name="ime" required placeholder="Unesite ime" oninvalid="this.setCustomValidity('Morate uneti ime')" oninput="setCustomValidity('')"
+								value="<?php echo $_SESSION["aktivistiRed"]['ime']; ?>">
+							</div>
+							<div class="input-box">
+								<span class="details">Prezime</span>
+								<input type="text" name="prezime" required placeholder="Unesite prezime" oninvalid="this.setCustomValidity('Morate uneti prezime')" oninput="setCustomValidity('')"
+								value="<?php echo $_SESSION["aktivistiRed"]['prezime']; ?>">
+							</div>
+							<div class="input-box">
+								<span class="details">Adresa</span>
+								<input type="text" name="adresa" required placeholder="Unesite adresu" oninvalid="this.setCustomValidity('Morate uneti adresu')" oninput="setCustomValidity('')"
+								value="<?php echo $_SESSION["aktivistiRed"]['adresa']; ?>">
+							</div>
+							<div class="input-box">
+								<span class="details">Broj telefona</span>
+								<input type="text" name="telefon" required placeholder="Unesite broj telefona" oninvalid="this.setCustomValidity('Morate uneti broj telefona')" oninput="setCustomValidity('')"
+								value="<?php echo $_SESSION["aktivistiRed"]['telefon']; ?>">
+							</div>
+							<div class="input-box">
+								<span class="details">Email</span>
+								<input type="text" name="email" required placeholder="Unesite email" oninvalid="this.setCustomValidity('Morate uneti email')" oninput="setCustomValidity('')"
+								value="<?php echo $_SESSION["aktivistiRed"]['email']; ?>">
+							</div>
+							<div class="input-box">
+								<span class="details">Šifra</span>
+								<input type="password" name="sifra" placeholder="Stara šifra je podrazumevana" oninvalid="this.setCustomValidity('Morate uneti šifru')" oninput="setCustomValidity('')">
+							</div>
+						</div>
+						<div class="button">
+							<input type="submit" name="unesi" value="Ažuriraj aktivistu">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php include('../futer.php') ?>
+</body>
+
+</html>

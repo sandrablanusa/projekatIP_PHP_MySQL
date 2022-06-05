@@ -8,9 +8,6 @@ if (isset($_POST['unesi'])) {
     $telefon = $_POST['telefon'];
     $email = $_POST['email'];
     $sifra = $_POST['sifra'];
-    $listaIDFlajera = NULL;
-    $listaBrojeva = NULL;
-    $listaDatumaDodele = NULL;
 
     $opcije = ['cost' => 10];
     $sifrovanaLozinka = password_hash($sifra, PASSWORD_DEFAULT, $opcije);
@@ -28,7 +25,7 @@ if (isset($_POST['unesi'])) {
         }
 
         if (!$postoji) {
-            $upit = "INSERT INTO flajerisanje.aktivisti(ime, prezime, adresa, telefon, email, sifra, listaIDFlajera, listaBrojeva, listaDatumaDodele) VALUES ('$ime', '$prezime', '$adresa', '$telefon', '$email', '$sifrovanaLozinka', '$listaIDFlajera', '$listaBrojeva', '$listaDatumaDodele' )";
+            $upit = "INSERT INTO flajerisanje.aktivisti(ime, prezime, adresa, telefon, email, sifra) VALUES ('$ime', '$prezime', '$adresa', '$telefon', '$email', '$sifrovanaLozinka' )";
             $rez = $veza->query($upit);
 
             if ($rez == 1) {
