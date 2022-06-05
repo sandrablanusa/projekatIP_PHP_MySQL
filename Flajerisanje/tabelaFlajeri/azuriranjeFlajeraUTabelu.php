@@ -52,15 +52,29 @@ if (isset($_POST['sacuvaj'])) {
 
             if($rez1 == 1 && $rez2 == 1) {
 
-                $upit = "INSERT INTO flajerisanje.flajeri(naziv, brojFlajera, brojPreostalihFlajera, javan, PDFfajl, HTMLFajl) VALUES ('$naziv', '$brojFlajera', '$brojFlajera', '$javan', '$pdf_file', '$html_file')";
+                $noviBrojFlajera = $brojFlajera + $_SESSION["flajerRed"]['brojFlajera'];
+                $noviBrojPreostalih = $brojFlajera + $_SESSION["flajerRed"]['brojPreostalihFlajera'];
+                $idFlajera = $_SESSION['flajerRed']['idFlajera'];
+
+                $pdfFlajer = $pdf_file == "" ? $_SESSION['flajerRed']['PDFfajl'] : $pdf_file;
+                $htmlFlajer = $html_file == "" ? $_SESSION['flajerRed']['HTMLFajl'] : $html_file;
+
+                $upit = "UPDATE flajerisanje.flajeri SET
+                    naziv = '$naziv', 
+                    brojFlajera = '$noviBrojFlajera',
+                    brojPreostalihFlajera = '$noviBrojPreostalih',
+                    javan = '$javan',
+                    PDFfajl = '$pdfFlajer',
+                    HTMLFajl = '$htmlFlajer'
+                WHERE idFlajera = '$idFlajera' ";
                 $rez = $veza->query($upit);
 
                 if ($rez == 1) {
-                    echo '<script>alert("Uspešno dodavanje flajera!");window.location.href=("../../administrator/unesiFlajerAdmin.html")</script>';
+                    echo '<script>alert("Uspešno ažuriranje flajera!");window.location.href=("../../administrator/azurirajFlajer.html")</script>';
+                    session_destroy();
                 } else {
-                    echo '<script>alert("Neuspešno dodavanje flajera, pokušajte opet!");window.location.href=("../../administrator/unesiFlajerAdmin.html")</script>';
+                    echo '<script>alert("Neuspešno ažuriranje flajera, pokušajte opet!");window.location.href=("../../administrator/azurirajFlajer.html")</script>';
                 }
-
             } else {
                 echo '<script>alert("Neuspešno dodavanje fajlova, pokušajte opet!");window.location.href=("../../administrator/unesiFlajerAdmin.html")</script>';
             }

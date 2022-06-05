@@ -25,7 +25,7 @@
         $red = mysqli_fetch_array($rez);
 
         $_SESSION["flajerRed"] = $red;
-        echo '<script>window.location.href=("unesiFlajerAdmin.html")</script>';
+        echo '<script>window.location.href=("azurirajFlajerAdmin.html")</script>';
         
         $veza->close();
     }

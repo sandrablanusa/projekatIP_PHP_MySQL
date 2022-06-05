@@ -1,4 +1,7 @@
 <!doctype html>
+<?php 
+    session_start();
+?>
 <html>
 
 <head>
@@ -30,28 +33,30 @@
         <!-- unos flajera-->
         <div class=" klasaUnesiFlajere">
             <div class="container">
-                <div class="title">
-                    <?php if(!isset($_SESSION["flajerRed"])) echo "Unos flajera"; else echo "Ažuriranje flajera"; ?>
-                </div>
+                <div class="title">Ažuriranje flajera</div>
                 <div class="content">
-                    <form action="../Flajerisanje/tabelaFlajeri/unosFlajeraUTabelu.php" method="post" enctype="multipart/form-data">
+                    <form action="../Flajerisanje/tabelaFlajeri/azuriranjeFlajeraUTabelu.php" method="post" enctype="multipart/form-data">
                         <div class="user-details">
                             <div class="input-box">
                                 <span class="details">Naziv flajera</span>
                                 <input type="text" name="naziv"  placeholder="Unesite naziv flajera"
-                                        required oninvalid="this.setCustomValidity('Morate uneti naziv flajera')" oninput="setCustomValidity('')"
-                                 >
+                                    value="<?php echo $_SESSION["flajerRed"]['naziv']; ?>">
                             </div>
                             <div class="input-box">
                                 <span class="details">Broj flajera</span>
-                                <input type="text" name="brojFlajera" placeholder="Unesite broj flajera" 
-                                        required oninvalid="this.setCustomValidity('Morate uneti broj flajera')" oninput="setCustomValidity('')"
-                                >
+                                <input type="text" name="brojFlajera" placeholder="Unesite broj flajera">
                             </div>
                         </div>
                         <div class="privatnost">
-                            <input type="radio" name="privat" id="dot-1" value="javan" >
-                            <input type="radio" name="privat" id="dot-2" value="tajan">
+                            <input type="radio" name="privat" id="dot-1" value="javan" 
+                                <?php if(isset($_SESSION["flajerRed"])) {
+                                        if($_SESSION["flajerRed"]['javan'] == 1) { echo "checked=\"checked\"";}
+                                    } ?>
+                            >
+                            <input type="radio" name="privat" id="dot-2" value="tajan"
+                            <?php if(isset($_SESSION["flajerRed"])) {
+                                        if($_SESSION["flajerRed"]['javan'] == 0) { echo "checked=\"checked\"";}
+                                    } ?>>
                             <span class="privat-title">Privatnost flajera</span>
                             <div class="category">
                                 <label for="dot-1">
