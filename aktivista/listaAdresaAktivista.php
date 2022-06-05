@@ -19,7 +19,6 @@
             $idUlice = $red['idUlice'];
             $brojZgrade = $red['brojZgrade'];
             $idFlajera = $red['idFlajera'];
-
             
             $upitUlica = "SELECT * FROM flajerisanje.ulica WHERE idUlice = '$idUlice'";
             $rezUlica = $veza->query($upitUlica);
