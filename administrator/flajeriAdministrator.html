@@ -1,4 +1,7 @@
 <!doctype html>
+<?php
+    session_start();
+	?>
 <html>
 
 <head>
@@ -20,6 +23,7 @@
 	</style>
 </head>
 <body onload=display_ct()>
+    <?php include('dugmiciKodFlajerAdministrator.php') ?>
 	<div class="okvir">
 		<div id="vreme">
 			<span id='ct' ></span>
@@ -29,149 +33,12 @@
         
         <!-- dodavanje informacija o flajerima -->
         <div class="bojaSadrzaja" >
-            <ul class="listaFlajera">
-                <h1>Informacije o flajerima</h1>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Flajer 1</div>
-                        <div class="content">Preostalo zgrada: 3 </div>
-                        <div class="content">Preostalo flajera: 26 </div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAdresu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Alociraj">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Flajer 2</div>
-                        <div class="content">Preostalo zgrada: 16 </div>
-                        <div class="content">Preostalo flajera: 480 </div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAdresu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Alociraj">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Flajer 3</div>
-                        <div class="content">Preostalo zgrada: 3 </div>
-                        <div class="content">Preostalo flajera: 9 </div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAdresu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Alociraj">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Flajer 4</div>
-                        <div class="content">Preostalo zgrada: 10 </div>
-                        <div class="content">Preostalo flajera: 101 </div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAdresu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Alociraj">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Flajer 5</div>
-                        <div class="content">Preostalo zgrada: 4 </div>
-                        <div class="content">Preostalo flajera: 79 </div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAdresu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Alociraj">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Flajer 6</div>
-                        <div class="content">Preostalo zgrada: 6 </div>
-                        <div class="content">Preostalo flajera: 51 </div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAdresu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Alociraj">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex-container">
-                        <div class="content">Flajer 7</div>
-                        <div class="content">Preostalo zgrada: 20 </div>
-                        <div class="content">Preostalo flajera: 512 </div>
-                        <div class="dugmiciKontejner">
-                            <div class="azurirajAdresu">
-                                <div class="button">
-                                    <input type="submit" value="Ažuriraj">
-                                </div>
-                            </div>
-                            <div class="delete">
-                                <div class="button">
-                                    <input type="submit" value="Alociraj">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </li>
-            </ul>
+			<form method="POST">
+                <ul class="listaFlajera">
+                    <h1>Informacije o flajerima</h1>
+				    <?php include('listaFlajeraAdministrator.php') ?>
+                </ul>
+            </form>
         </div>
     </div>
     <?php include('../futer.php') ?>

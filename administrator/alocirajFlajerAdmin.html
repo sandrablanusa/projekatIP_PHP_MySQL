@@ -1,12 +1,5 @@
 <!doctype html>
 <?php 
-    $is_page_refreshed = (isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] == 'max-age=0');
- 
-    if(!$is_page_refreshed) {
-        session_start();
-        session_unset();
-        session_destroy();
-    }
     session_start();
 ?>
 <html>
