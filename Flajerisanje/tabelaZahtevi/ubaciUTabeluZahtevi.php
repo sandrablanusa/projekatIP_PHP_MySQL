@@ -23,7 +23,6 @@
 
         $upit = "INSERT INTO flajerisanje.zahtevi(idUlice, brojeviZgrada, idFlajera, idAktiviste, brojFlajera) 
                  VALUES ('$idUlice', '$brojeviZgrada', '$idFlajera', '$idAktiviste', '$brFlajera')";
-        echo $upit;
         $rez = $veza->query($upit);
 
         if ($rez == 1) {

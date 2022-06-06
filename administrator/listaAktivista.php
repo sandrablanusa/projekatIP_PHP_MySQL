@@ -27,8 +27,8 @@
         echo "<li>
         <div class=\"flex-container\">
             <div class=\"content\">".$red['ime']. " " .$red['prezime']."</div>
-            <div class=\"content\">Podelio/la ".$brojIsflajerisanih." flajera</div>
-            <div class=\"content\">Preostalo ".$ukupnoBrojeva." flajera</div>
+            <div class=\"content2\">Podelio/la ".$brojIsflajerisanih." flajera</div>
+            <div class=\"content3\">Preostalo ".$ukupnoBrojeva." flajera</div>
         </div>
     </li>"; 
     }

@@ -254,7 +254,6 @@ img {
 	max-height: 800px;
 	height: 90%;
 	overflow-y: auto;
-	padding: 10px;
 	background-color: #e6e6e6;
 }
 
@@ -283,6 +282,20 @@ img {
 }
 
 .content {
+    align-items: center;
+    flex-basis: 50%;
+    flex-grow: 1;
+    margin-right:5px;
+}
+
+.content2 {
+    align-items: center;
+    flex-basis: 50%;
+    flex-grow: 1;
+    margin-right:5px;
+}
+
+.content3 {
     align-items: center;
     flex-basis: 50%;
     flex-grow: 1;
