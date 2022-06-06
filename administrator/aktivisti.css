@@ -282,6 +282,25 @@ img {
     background: #333;
 }
 
+.content {
+    align-items: center;
+    flex-basis: 50%;
+    flex-grow: 1;
+    margin-right:5px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    /*  flex-direction: row; */
+    /* align-content: flex-start; */
+    border-radius: 20%;
+    /*  justify-content: flex-end;
+    align-items: baseline; */
+}
+
 ul {
 	margin: 0;
 	padding-left: 0;

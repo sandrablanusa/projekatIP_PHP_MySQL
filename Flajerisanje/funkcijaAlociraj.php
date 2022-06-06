@@ -22,7 +22,7 @@ function alocirajFlajer($idUlice, $idAktiviste, $idFlajera, $brFlajera, $brojevi
         $imeUlice = $redUlica['ulica'];
 
         foreach($brojeviZgrada as $br) {
-            $upit = "INSERT INTO flajerisanje.adrese(idUlice, idAktiviste, idFlajera, ulica, brojZgrade) VALUES ('$idUlice', '$idAktiviste', '$idFlajera', '$imeUlice', '$br')";
+            $upit = "INSERT INTO flajerisanje.adrese(idUlice, idAktiviste, idFlajera, ulica, brojZgrade, flajerisano) VALUES ('$idUlice', '$idAktiviste', '$idFlajera', '$imeUlice', '$br', false)";
             $rez = $veza->query($upit);
             if ($rez != 1) {
                 $greska = true;

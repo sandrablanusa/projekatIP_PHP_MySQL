@@ -292,8 +292,13 @@ li {
 }
 
 .content {
-    text-align: left;
+    align-items: center;
+    flex-basis: 50%;
+    flex-grow: 1;
+    margin-right:5px;
 }
+
+
 .flex-container {
 	display: flex;
     flex-direction: row;
